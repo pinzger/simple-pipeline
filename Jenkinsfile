@@ -1,13 +1,13 @@
 pipeline {
     agent any
     environment {
-        GITHUB_USER = credentials('GITHUB_USER')
+        GITHUB_CREDS = credentials('GITHUB_USER')
     }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo $GITHUB_USER
+                echo "Github User: ${GITHUB_CREDS_USR}"
             }
         }
         stage('Test') {
